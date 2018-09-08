@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface inputHandler : NSObject
+@interface InputHandler : NSObject
 + (NSString *) getUserInputWithLength: (int) maxLength
                            withPrompt: (NSString *) prompt;
 

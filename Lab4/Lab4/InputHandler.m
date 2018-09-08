@@ -6,12 +6,12 @@
 //  Copyright © 2018年 yoshizawarei. All rights reserved.
 //
 
-#import "inputHandler.h"
+#import "InputHandler.h"
 
-@implementation inputHandler
+@implementation InputHandler
 
 + (NSString *) getUserInputWithLength: (int) maxLength
-                            withPrompt: (NSString *)prompt {
+                           withPrompt: (NSString *)prompt {
     if (maxLength < 1) {
         maxLength = 255;
     }
@@ -24,3 +24,4 @@
 }
 
 @end
+

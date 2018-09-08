@@ -7,17 +7,22 @@
 //
 
 #import "ScoreKeeper.h"
-#import "inputHandler.h"
 
 @implementation ScoreKeeper
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _rightCount = 0;
+        _wrongCount = 0;
+    }
+    return self;
+}
 
-- (NSString *) ScoreKeeperRightCount: (float) rightCount
-               ScoreKeeperWrongCount: (float) wrongCount {
-        rightCount += 1.0;
-        float totalTried = 0.0;
-        totalTried += 1.0;
-        float rightPercentage = (rightCount / totalTried) * 100;
-        NSLog(@"score: %.0f right, %.0f wrong  ---- %.0f%%", rightCount, wrongCount, rightPercentage);
+- (NSString *) counter {
+        float totalTried = +1;
+        float rightPercentage = (_rightCount / totalTried) * 100;
+        NSLog(@"score: %.0f right, %.0f wrong  ---- %.0f%%", _rightCount, wrongCount, rightPercentage);
     return 0;
 }
 

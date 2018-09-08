@@ -13,7 +13,6 @@
 @property (nonatomic, assign) float rightCount;
 @property (nonatomic, assign) float wrongCount;
 
-- (NSString *) ScoreKeeperRightCount: (float) rightCount
-               ScoreKeeperWrongCount: (float) wrongCount;
+- (NSString *) counter;
 
 @end

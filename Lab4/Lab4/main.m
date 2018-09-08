@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
                 // 1. get user input for name and email
                 NSString *name = [InputHandler getUserInputWithLength:255 withPrompt:@"Enter the name: "];
                 NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"Enter the email: "];
+                NSString *address = [InputHandler getUserInputWithLength:255 withPrompt:@"Enter the address: "];
 
                 // 2. create a contact object based on the user input
                 Contact *newContact = [[Contact alloc] initWithName:name andEmail:email];

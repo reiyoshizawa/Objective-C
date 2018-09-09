@@ -24,6 +24,29 @@
     [_contactList addObject:  newContact];
 }
 
+- (NSMutableArray *) showContactDetails: (int) id {
+    NSMutableArray *result = [_contactList objectAtIndex: id];
+    return result;
+}
+
+- (NSUInteger) count {
+    NSUInteger count = [_contactList count];
+    return count;
+}
+
+- (void) preventDuplicate: (NSString *) email{
+    NSSet *set = [[NSSet alloc] init];
+    if ([_contactList containsObject:email]) {
+        NSLog(@"the contact already exists and cannot be created");
+    }
+}
+
+- (NSMutableArray *) searchContact: (NSString *) searchTerm{
+    [_contactList]
+    NSMutableArray *result = [_contactList objectAtIndex: id];
+    return result;
+}
+
 - (NSString *)description
 {
     NSMutableString *result = [NSMutableString new];

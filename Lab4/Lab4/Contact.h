@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PhoneNumber.h"
 
 @interface Contact : NSObject
 
@@ -15,5 +16,6 @@
 
 - (instancetype)initWithName: (NSString *) name
                     andEmail: (NSString *) email;
+
 
 @end

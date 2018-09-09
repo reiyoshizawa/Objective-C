@@ -14,9 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *contactList;
 
 - (void) addContact: (Contact *) newContact;
-- (NSMutableArray *) showContactDetails: (int) id;
-- (NSUInteger) count;
-- (void) preventDuplicate: (NSString *)email;
+- (void) showContactDetails: (int) id;
+- (void) printHistory: (NSMutableArray *) input;
 
 @end
 

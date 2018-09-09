@@ -15,36 +15,40 @@
     self = [super init];
     if (self) {
         _contactList = [NSMutableArray new];
-        
     }
     return self;
 }
 
 - (void) addContact: (Contact *) newContact {
-    [_contactList addObject:  newContact];
+    [_contactList addObject: newContact];
 }
 
-- (NSMutableArray *) showContactDetails: (int) id {
-    NSMutableArray *result = [_contactList objectAtIndex: id];
-    return result;
-}
-
-- (NSUInteger) count {
-    NSUInteger count = [_contactList count];
-    return count;
-}
-
-- (void) preventDuplicate: (NSString *) email{
-    NSSet *set = [[NSSet alloc] init];
-    if ([_contactList containsObject:email]) {
-        NSLog(@"the contact already exists and cannot be created");
+- (void) showContactDetails: (int) id {
+    @try {
+        // If a contact with that index/id is found, display their details
+        NSMutableArray *result = [_contactList objectAtIndex: id];
+        NSLog(@"\n%@", result);
+    }
+    @catch (NSException *exception) {
+        // If the contact cannot be found, display a "not found" message.
+        NSLog(@"\nnot found");
     }
 }
 
-- (NSMutableArray *) searchContact: (NSString *) searchTerm{
-    [_contactList]
-    NSMutableArray *result = [_contactList objectAtIndex: id];
-    return result;
+- (void) printHistory: (NSMutableArray *) input {
+    NSMutableArray *reversedArray = [NSMutableArray new];
+    for (id value in [input reverseObjectEnumerator]) {
+        [reversedArray addObject:value];
+    }
+
+    NSUInteger cnt = [reversedArray count];
+    if (cnt < 2) {
+        NSLog(@"\n%@", [reversedArray objectAtIndex:0]);
+    } else if (cnt < 3) {
+        NSLog(@"\n%@ \n%@", [reversedArray objectAtIndex:0], [reversedArray objectAtIndex:1]);
+    } else {
+        NSLog(@"\n%@ \n%@ \n%@", [reversedArray objectAtIndex:0], [reversedArray objectAtIndex:1], [reversedArray objectAtIndex:2]);
+    }
 }
 
 - (NSString *)description

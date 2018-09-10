@@ -20,7 +20,18 @@
 }
 
 - (void) addContact: (Contact *) newContact {
-    [_contactList addObject: newContact];
+    @try {
+        [_contactList addObject: newContact];
+        for (Contact *contact in _contactList) {
+            if ([contact.email isEqualToString:newContact.email]) {
+                [_contactList addObject: newContact];
+            } 
+        }
+    }
+    @catch (NSException *exception) {
+        [_contactList removeObject: newContact];
+        NSLog(@"\nthe contact already exists and cannot be created");
+    }
 }
 
 - (void) showContactDetails: (int) id {
@@ -34,6 +45,14 @@
         NSLog(@"\nnot found");
     }
 }
+
+//- (void) findContact: (NSString *) searchWord {
+//    for (Contact *contact in _contactList) {
+//        if ([contact.name isEqualToString: searchWord]) {
+//            NSLog(@"\nfound!");
+//        }
+//    }
+//}
 
 - (void) printHistory: (NSMutableArray *) input {
     NSMutableArray *reversedArray = [NSMutableArray new];

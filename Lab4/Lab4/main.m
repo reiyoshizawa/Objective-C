@@ -10,6 +10,7 @@
 #import "InputHandler.h"
 #import "Contact.h"
 #import "ContactList.h"
+#import "PhoneNumber.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -27,17 +28,13 @@ int main(int argc, const char * argv[]) {
                 // 1. get user input for name and email
                 NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
                 NSString *name = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
-                
+       
                 // 2. create a contact object based on the user input
                 Contact *newContact = [[Contact alloc] initWithName:name andEmail:email];
                 
                 // 3. add the contact to ContactList's contactList
-                if ([contactList doesContain:newContact.email]) {
-                    NSLog(@"not");
-                } else {
-                    [contactList addContact:newContact];
-                }
-
+                [contactList addContact:newContact];
+            
             } else if ([option isEqualToString:@"list"]) {
                 [input addObject:@"list"];
                 NSLog(@"\n%@", contactList);
@@ -49,9 +46,6 @@ int main(int argc, const char * argv[]) {
                 fgets(test,10,stdin);
                 id=atoi(test);
                 [contactList showContactDetails: id];
-            } else if ([option isEqualToString:@"find"]) {
-                [input addObject:@"find"];
-                NSString *contactSearch = [InputHandler getUserInputWithLength:255 withPrompt:@""];
             } else if ([option isEqualToString:@"history"]) {
                 [contactList printHistory: input];
             }

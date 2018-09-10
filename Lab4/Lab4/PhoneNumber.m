@@ -10,15 +10,20 @@
 
 @implementation PhoneNumber
 
-- (instancetype)initWithLabel : (NSString *) label
-                    andNumber : (NSString *) number
+- (instancetype)initWithPhoneLabel: (NSString *) phoneLabel
+                    andPhoneNumber: (NSString *) phoneNumber
 {
     self = [super init];
     if (self) {
-        _label = label;
-        _number = number;
+        _phoneLabel = phoneLabel;
+        _phoneNumber = phoneNumber;
     }
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@, %@", self.phoneLabel, self.phoneNumber];
 }
 
 @end

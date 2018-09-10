@@ -8,6 +8,7 @@
 
 #import "Contact.h"
 #import "ContactList.h"
+#import "PhoneNumber.h"
 
 @implementation Contact
 

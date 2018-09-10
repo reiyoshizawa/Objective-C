@@ -10,8 +10,8 @@
 		26BD33BD2142DF0800710C39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD33BC2142DF0800710C39 /* main.m */; };
 		26BD33CB2142F02F00710C39 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD33CA2142F02F00710C39 /* InputHandler.m */; };
 		26BD33CE2142F34E00710C39 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD33CD2142F34E00710C39 /* Contact.m */; };
-		26BD33D12142F6B700710C39 /* ContactList.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BD33D02142F6B700710C39 /* ContactList.m */; };
 		26F7999621463208006E37A5 /* PhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F7999521463208006E37A5 /* PhoneNumber.m */; };
+		26F799D02146F8A4006E37A5 /* ContactList.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F799CF2146F8A4006E37A5 /* ContactList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +33,10 @@
 		26BD33CA2142F02F00710C39 /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		26BD33CC2142F34E00710C39 /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		26BD33CD2142F34E00710C39 /* Contact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-		26BD33D02142F6B700710C39 /* ContactList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ContactList.m; path = ../ContactList.m; sourceTree = "<group>"; };
-		26BD33D2214304DB00710C39 /* ContactList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactList.h; sourceTree = "<group>"; };
 		26F7999421463208006E37A5 /* PhoneNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneNumber.h; sourceTree = "<group>"; };
 		26F7999521463208006E37A5 /* PhoneNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumber.m; sourceTree = "<group>"; };
+		26F799CE2146F8A4006E37A5 /* ContactList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactList.h; sourceTree = "<group>"; };
+		26F799CF2146F8A4006E37A5 /* ContactList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +69,6 @@
 		26BD33BB2142DF0800710C39 /* Lab4 */ = {
 			isa = PBXGroup;
 			children = (
-				26BD33D2214304DB00710C39 /* ContactList.h */,
-				26BD33D02142F6B700710C39 /* ContactList.m */,
 				26BD33BC2142DF0800710C39 /* main.m */,
 				26BD33C92142F02F00710C39 /* InputHandler.h */,
 				26BD33CA2142F02F00710C39 /* InputHandler.m */,
@@ -78,6 +76,8 @@
 				26BD33CD2142F34E00710C39 /* Contact.m */,
 				26F7999421463208006E37A5 /* PhoneNumber.h */,
 				26F7999521463208006E37A5 /* PhoneNumber.m */,
+				26F799CE2146F8A4006E37A5 /* ContactList.h */,
+				26F799CF2146F8A4006E37A5 /* ContactList.m */,
 			);
 			path = Lab4;
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26BD33D12142F6B700710C39 /* ContactList.m in Sources */,
 				26BD33BD2142DF0800710C39 /* main.m in Sources */,
+				26F799D02146F8A4006E37A5 /* ContactList.m in Sources */,
 				26BD33CE2142F34E00710C39 /* Contact.m in Sources */,
 				26BD33CB2142F02F00710C39 /* InputHandler.m in Sources */,
 				26F7999621463208006E37A5 /* PhoneNumber.m in Sources */,

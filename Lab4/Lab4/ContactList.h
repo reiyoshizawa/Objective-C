@@ -15,8 +15,8 @@
 
 - (void) addContact: (Contact *) newContact;
 - (void) showContactDetails: (int) id;
-//- (void) findContact: (NSString *) searchWord;
 - (void) printHistory: (NSMutableArray *) input;
 
 @end
+
 

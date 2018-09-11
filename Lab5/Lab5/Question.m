@@ -38,7 +38,6 @@
 }
 
 - (void) generateQuestions{
-    
 }
 
 @end

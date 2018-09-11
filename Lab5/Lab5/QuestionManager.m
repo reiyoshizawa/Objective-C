@@ -33,14 +33,5 @@
     @catch (NSException *e) {
         NSLog(@"error occured");
     }
-    
-//    Question *last = [_questions objectAtIndex: [_questions count] - 1];
-//    Question *first = [_questions objectAtIndex:0];
-    
-//    NSTimeInterval timeInterval = [[last endTime] timeIntervalSinceDate:[first startTime]];
-//    long second = lround(timeInterval);
-//
-//    return [NSString stringWithFormat:@"total time : %lus, average time : %lus",
-//            second, second /  [_questions count]];
 }
 @end

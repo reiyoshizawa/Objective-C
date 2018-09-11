@@ -27,17 +27,15 @@ int main(int argc, const char * argv[]) {
 
         while (gameOn) {
             Question *q = [questionFactory generateRandomQeustion];
-
-            // 98 + 63 ?
             NSString *userAnswer = [InputHandler getUserInputWithLength:10 withPrompt: [q question]];
             NSInteger userAnsInt = [userAnswer integerValue];
-           
+            [questionArray addObject: q];
+
             if([q answer] == userAnsInt) {
                 // if answer is correct, it shows "Right!"
                 NSLog(@"%@", right);
                 [scoreKeeper setRight:[scoreKeeper right] + 1];
                 [scoreKeeper scoreRight:[scoreKeeper right] andWrong:[scoreKeeper wrong]];
-                [questionArray addObject: q];
                 [questionManager setQuestions:questionArray];
                 NSLog(@"%@", [questionManager timeOutput]);
             } else if ([userAnswer isEqualToString:@"quit"]) {
@@ -47,7 +45,6 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@", wrong);
                 [scoreKeeper setWrong:[scoreKeeper wrong] + 1];
                 [scoreKeeper scoreRight:[scoreKeeper right] andWrong:[scoreKeeper wrong]];
-                [questionArray addObject: q];
                 [questionManager setQuestions:questionArray];
                 NSLog(@"%@", [questionManager timeOutput]);
             }

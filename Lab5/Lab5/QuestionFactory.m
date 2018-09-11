@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _questionTypes = @[@"AddtionQuestion",@"SubtractionQuestion",
+        _questionTypes = @[@"AdditionQuestion",@"SubtractionQuestion",
                            @"MultiplicationQuestion",@"DivisionQuestion"];
     }
     return self;

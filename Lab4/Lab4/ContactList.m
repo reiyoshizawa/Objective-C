@@ -20,6 +20,13 @@
 }
 
 - (void) addContact: (Contact *) newContact {
+    for (Contact *contact in _contactList){
+        if(contact.email == newContact.email)
+        {
+            NSLog(@"the contact already exists and cannot be created");
+            break;
+        }
+    }
     [_contactList addObject: newContact];
 }
 
@@ -33,6 +40,22 @@
         // If the contact cannot be found, display a "not found" message.
         NSLog(@"\nnot found");
     }
+}
+
+- (NSString *) searchEmail: (NSString *) email
+             andsearchName: (NSString *) name
+{
+    NSMutableString *result = [NSMutableString new];
+    for (Contact *contact in _contactList){
+        if ([contact.name isEqualToString:email] || [contact.email isEqualToString:name]) {
+            NSString *contractStr =  [NSString stringWithFormat:@"%@\n",contact];
+            [result appendString: contractStr];
+            NSLog(@"\n%@",result);
+        } else {
+            NSLog(@"not found");
+        }
+    }
+    return 0;
 }
 
 - (void) printHistory: (NSMutableArray *) input {

@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
         NSMutableArray *input = [NSMutableArray new];
 
         while (true) {
-            NSString *menu = @"\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nshow - Show contact details\nhistory - print the last 3 commands the user has entered\nquit - Exit Application\n> _";
+            NSString *menu = @"\nWhat would you like to do next?\nnew - Create a new contact\nlist - List all contacts\nshow - Show contact details\nfind - Search through the names of the contacts\nhistory - print the last 3 commands the user has entered\nquit - Exit Application\n> _";
             NSString *option = [InputHandler getUserInputWithLength:20 withPrompt: menu];
             
             if ([option isEqualToString:@"quit"]) {
@@ -46,8 +46,12 @@ int main(int argc, const char * argv[]) {
                 fgets(test,10,stdin);
                 id=atoi(test);
                 [contactList showContactDetails: id];
+            } else if ([option isEqualToString:@"find"]) {
+                NSString *email = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the email: "];
+                NSString *name = [InputHandler getUserInputWithLength:255 withPrompt:@"\nEnter the name: "];
+                [contactList searchEmail:email andsearchName:name];
             } else if ([option isEqualToString:@"history"]) {
-                [contactList printHistory: input];
+                [contactList printHistory:input];
             }
         }
         

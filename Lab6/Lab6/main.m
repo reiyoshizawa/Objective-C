@@ -8,17 +8,33 @@
 
 #import <Foundation/Foundation.h>
 #import "Dice.h"
+#import "GameController.h"
 #import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        GameController *player1 = [GameController new];
+        
         while (true) {
-            NSString *input = [InputHandler getUserInputWithLength:10 withPrompt:@"\n'roll' to roll the dice.\n'quit' to exit the game."];
+            NSString *input = [InputHandler getUserInputWithLength:10 withPrompt:@"\n'roll' to roll the dice.\n'quit' to exit the game.\n'hold' to hold the dice\n'holdall' to hold all the dices\n'resetdice' to reset all the dices\n'displayscore' to display the score"];
             
             if ([input isEqualToString:@"roll"]) {
-                Dice *die = [Dice dice];
-                [die roll];
-                NSLog(@"%@", die);
+                [player1 roll];
+                [player1 displayCurrentDeck];
+            } else if ([input isEqualToString:@"hold"]) {
+                char test[10];
+                int id;
+                NSLog(@"Enter the id");
+                fgets(test,10,stdin);
+                id=atoi(test);
+                [player1 holdDice:id];
+            } else if ([input isEqualToString:@"holdall"]) {
+                [player1 holdAll];
+            } else if ([input isEqualToString:@"resetdice"]) {
+                [player1 resetDice];
+            } else if ([input isEqualToString:@"displayscore"]) {
+                
             } else if ([input isEqualToString:@"quit"]) {
                 break;
             }

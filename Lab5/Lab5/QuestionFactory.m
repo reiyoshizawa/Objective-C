@@ -22,7 +22,7 @@
 
 - (Question *) generateRandomQeustion{
 //    return an instance of + - x / question object
-    NSString *type = [_questionTypes objectAtIndex: arc4random_uniform(3)];
+    NSString *type = [_questionTypes objectAtIndex: arc4random_uniform(4)];
 
 //    [[AdditionQeustion alloc] init];
 //    takes string return class

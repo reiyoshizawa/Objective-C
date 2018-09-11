@@ -23,6 +23,7 @@ int main(int argc, const char * argv[]) {
         ScoreKeeper *scoreKeeper = [ScoreKeeper new];
         QuestionManager *questionManager = [QuestionManager new];
         QuestionFactory *questionFactory = [QuestionFactory new];
+        NSMutableArray *questionArray = [NSMutableArray array];
 
         while (gameOn) {
             Question *q = [questionFactory generateRandomQeustion];
@@ -36,9 +37,9 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@", right);
                 [scoreKeeper setRight:[scoreKeeper right] + 1];
                 [scoreKeeper scoreRight:[scoreKeeper right] andWrong:[scoreKeeper wrong]];
-                NSMutableArray *questionArray = [NSMutableArray arrayWithObject:q];
+                [questionArray addObject: q];
                 [questionManager setQuestions:questionArray];
-                [questionManager timeOutput];
+                NSLog(@"%@", [questionManager timeOutput]);
             } else if ([userAnswer isEqualToString:@"quit"]) {
                 gameOn = NO;
             } else {
@@ -46,40 +47,10 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"%@", wrong);
                 [scoreKeeper setWrong:[scoreKeeper wrong] + 1];
                 [scoreKeeper scoreRight:[scoreKeeper right] andWrong:[scoreKeeper wrong]];
-//                [questionManager setQuestions:[questionFactory questionTypes]];
-                NSMutableArray *questionArray = [NSMutableArray arrayWithObject:q];
+                [questionArray addObject: q];
                 [questionManager setQuestions:questionArray];
-                [questionManager timeOutput];
+                NSLog(@"%@", [questionManager timeOutput]);
             }
-                      
-            
-            
-            
-            
-//            AdditionQuestion *q = [AdditionQuestion new];
-//            NSString *userAnswer = [InputHandler getUserInputWithLength:10 withPrompt: [q question]];
-//            NSInteger userAnsInt = [userAnswer integerValue];
-//            ScoreKeeper *s = [ScoreKeeper new];
-//
-//            if([q answer] == userAnsInt) {
-//                NSLog(@"Right!");
-//                //                rightCount += 1;
-//                //                totalTried += 1;
-//                //                rightPercentage = (rightCount / totalTried) * 100;
-//                //                NSLog(@"score: %.0f right, %.0f wrong  ---- %.0f%%", rightCount, wrongCount, rightPercentage);
-//                [s rightCount] == [s rightCount] + 1;
-//                [s counter];
-//            } else if ([userAnswer isEqualToString:@"quit"]) {
-//                gameOn = NO;
-//            } else {
-//                NSLog(@"Wrong!");
-//                //                wrongCount += 1;
-//                //                totalTried += 1;
-//                //                rightPercentage = (rightCount / totalTried) * 100;
-//                //                NSLog(@"score: %.0f right, %.0f wrong  ---- %.0f%%", rightCount, wrongCount, rightPercentage);
-//                [s wrongCount] ==  [s wrongCount] + 1;
-//                [s counter];
-//            }
         }
     }
     return 0;

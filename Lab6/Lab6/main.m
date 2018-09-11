@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         GameController *player1 = [GameController new];
         
         while (true) {
-            NSString *input = [InputHandler getUserInputWithLength:10 withPrompt:@"\n'roll' to roll the dice.\n'quit' to exit the game.\n'hold' to hold the dice\n'holdall' to hold all the dices\n'resetdice' to reset all the dices\n'displayscore' to display the score"];
+            NSString *input = [InputHandler getUserInputWithLength:10 withPrompt:@"\n'roll' to roll the dice.\n'quit' to exit the game.\n'hold' to hold the dice\n'holdall' to hold all the dices\n'resetdice' to reset all the dices\n'score' to display the score"];
             
             if ([input isEqualToString:@"roll"]) {
                 [player1 roll];
@@ -33,8 +33,8 @@ int main(int argc, const char * argv[]) {
                 [player1 holdAll];
             } else if ([input isEqualToString:@"resetdice"]) {
                 [player1 resetDice];
-            } else if ([input isEqualToString:@"displayscore"]) {
-                
+            } else if ([input isEqualToString:@"score"]) {
+                [player1 displayScore];
             } else if ([input isEqualToString:@"quit"]) {
                 break;
             }

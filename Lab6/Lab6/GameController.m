@@ -76,12 +76,28 @@
 }
 
 - (void) displayScore {
-    // 1. check if the game is over (rollCount)
-    //    - print GAME OVER
-    //    - print the currentDeck and the score (the sum of faceValues)
-    
-    // 2. not over
-    //    - print the currentDeck and the score (the sum of faceValues)
+//    // 1. check if the game is over (rollCount)
+//    //    - print GAME OVER
+//    //    - print the currentDeck and the score (the sum of faceValues)
+//
+//    // 2. not over
+//    //    - print the currentDeck and the score (the sum of faceValues)
+    NSMutableString *currentDeck = [NSMutableString string];
+    NSUInteger score = 0;
+    for (Dice *die in _displayDice) {
+        [currentDeck appendFormat:@" %@ ", [die description]];
+        if(die.held) {
+            score += die.faceValue;
+        }
+    }
+    for (Dice *die in _displayDice) {
+        if (rollCount < 1) {
+            die.held = true;
+            score += die.faceValue;
+        }
+    }
+    NSLog(@"%@, score: %lu", currentDeck, score);
     
 }
+
 @end

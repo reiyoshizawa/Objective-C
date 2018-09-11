@@ -43,9 +43,15 @@
 }
 
 - (void) displayCurrentDeck {
+    
     NSMutableString *currentDeck = [NSMutableString string];
     for (Dice *die in _displayDice) {
-        [currentDeck appendFormat:@" %@ ", [die description]];
+        if (rollCount == 0) {
+            die.held = true;
+            [currentDeck appendFormat:@" %@ ", [die description]];
+        } else {
+            [currentDeck appendFormat:@" %@ ", [die description]];
+        }
     }
     NSLog(@"%@", currentDeck);
 }
@@ -88,12 +94,11 @@
         [currentDeck appendFormat:@" %@ ", [die description]];
         if(die.held) {
             score += die.faceValue;
-        }
-        if (rollCount < 1) {
+        } else if (rollCount < 1) {
+            NSLog(@"GAME OVER");
             die.held = true;
             score += die.faceValue;
         }
-        NSLog(@"GAME OVER");
     }
     NSLog(@"%@, score: %lu", currentDeck, score);
 }

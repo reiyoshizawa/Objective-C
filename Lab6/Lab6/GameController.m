@@ -89,15 +89,12 @@
         if(die.held) {
             score += die.faceValue;
         }
-    }
-    for (Dice *die in _displayDice) {
         if (rollCount < 1) {
             die.held = true;
             score += die.faceValue;
         }
+        NSLog(@"GAME OVER");
     }
     NSLog(@"%@, score: %lu", currentDeck, score);
-    
 }
-
 @end

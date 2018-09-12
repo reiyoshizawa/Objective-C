@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Patient.h"
+#import "Doctor.h"
 
 @interface Prescription : NSObject
+
+@property (nonatomic, strong) NSString *symptom;
+@property (nonatomic, strong) NSString *prescription;
+@property (nonatomic, strong) Patient *patient;
+
+- (instancetype)initWithSymptom: (NSString *) symptom
+                andPrescription: (NSString *) prescription
+                     andPatient: (Patient *) patient;
 
 @end

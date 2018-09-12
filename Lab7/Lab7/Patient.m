@@ -7,17 +7,20 @@
 //
 
 #import "Patient.h"
+#import "Doctor.h"
+#import "Prescription.h"
 
 @interface Patient() {
     @private
     Boolean healthCard;
+    NSMutableArray *prescriptionList;
 }
 @end
 
 @implementation Patient
 
 - (instancetype)initWithName: (NSString *) name
-           andSpecialization: (NSUInteger) age
+                      andAge: (NSUInteger) age
                andHealthCard: (Boolean) card
 {
     self = [super init];
@@ -25,6 +28,7 @@
         _name = name;
         _age = age;
         healthCard = card;
+        prescriptionList = [NSMutableArray array];
     }
     return self;
 }
@@ -40,6 +44,10 @@
     } else {
         NSLog(@"REJECTED! No medication...");
     }
+}
+
+- (void) givePrescription: (Prescription *) prescription{
+    [prescriptionList addObject:prescription];
 }
 
 @end

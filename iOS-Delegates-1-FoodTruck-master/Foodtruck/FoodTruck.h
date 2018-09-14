@@ -15,7 +15,6 @@
 
 @end
 
-
 @interface FoodTruck : NSObject
 
 @property (nonatomic, weak) id<FoodTruckDelegate> delegate;

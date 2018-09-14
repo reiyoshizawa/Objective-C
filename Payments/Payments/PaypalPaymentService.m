@@ -11,16 +11,20 @@
 @implementation PaypalPaymentService
 
 - (void) processPaymentAmount: (NSInteger) randomDollar {
-    NSLog(@"Paypal processed amount $%ld", randomDollar);
+    if([self canProcessPayment]) {
+        NSLog(@"Paypal processed amount $%ld", randomDollar);
+    } else {
+        NSLog(@"Sorry, Your payment cannot be processed.");
+    }
 }
 
-//- (BOOL) canProcessPayment {
-//    int rand = arc4random_uniform(1);
-//    if (rand == 0) {
-//        return NO;
-//    } else {
-//        return YES;
-//    }
-//}
+- (BOOL) canProcessPayment {
+    int rand = arc4random_uniform(2);
+    if (rand == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
 
 @end

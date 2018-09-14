@@ -14,4 +14,13 @@
     NSLog(@"Amazon processed amount $%ld", randomDollar);
 }
 
+- (BOOL) canProcessPayment {
+    int rand = arc4random_uniform(2);
+    if (rand == 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 @end

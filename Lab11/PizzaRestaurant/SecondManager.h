@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "KitchenDelegate.h"
 #import "Kitchen.h"
+#import "DeliveryService.h"
 
 @interface SecondManager : NSObject <KitchenDelegate>
-
+@property (nonatomic, weak) DeliveryService *deliveryService;
 @end

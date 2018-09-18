@@ -12,6 +12,7 @@
 #import "Pizza.h"
 #import "Manager.h"
 #import "SecondManager.h"
+#import "DeliveryService.h"
 
 int main(int argc, const char * argv[])
 {
@@ -22,6 +23,7 @@ int main(int argc, const char * argv[])
         
         Kitchen *restaurantKitchen = [Kitchen new];
         Manager *trump = [Manager new];
+        DeliveryService *deliveryService = [DeliveryService new];
         SecondManager *putin = [SecondManager new];
         
         while (TRUE) {
@@ -46,6 +48,7 @@ int main(int argc, const char * argv[])
             restaurantKitchen.delegate = putin;
             Pizza *pizza2 = [restaurantKitchen makePizzaWithSize:small toppings:commandWords];
             NSLog(@"%@", pizza2);
+        
             
             //            if ([commandWords containsObject:@"pepperoni"]) {
             //                Pizza *pizza = [Pizza largePepperoni];

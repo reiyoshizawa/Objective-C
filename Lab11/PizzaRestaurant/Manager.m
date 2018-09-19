@@ -25,8 +25,7 @@ shouldMakePizzaOfSize:(PizzaSize)size andToppings:(NSArray *)toppings {
 
 - (void)kitchenDidMakePizza:(Pizza *)pizza {
     DeliveryService *deliveryService = [DeliveryService new];
-    self.deliveryService = deliveryService;
-    [self.deliveryService deliverPizza:pizza];
+    [deliveryService deliverPizza:pizza];
 }
 
 @end

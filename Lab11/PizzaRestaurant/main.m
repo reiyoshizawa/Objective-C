@@ -23,7 +23,6 @@ int main(int argc, const char * argv[])
         
         Kitchen *restaurantKitchen = [Kitchen new];
         Manager *trump = [Manager new];
-        DeliveryService *deliveryService = [DeliveryService new];
         SecondManager *putin = [SecondManager new];
         
         while (TRUE) {

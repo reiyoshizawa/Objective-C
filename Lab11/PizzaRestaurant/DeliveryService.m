@@ -17,7 +17,8 @@
 }
 
 - (void) deliverPizza:(Pizza *)pizza {
-    NSLog(@"Pizza Delivered");
+    DeliveryCar *deliveryCar = [DeliveryCar new];
+    [deliveryCar deliverPizza:pizza];
 }
 
 @end
